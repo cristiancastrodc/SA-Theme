@@ -12,13 +12,15 @@ define( 'CHILD_THEME_URL', 'http://surgeonsadvisor.com' );
 //* Enqueue Scripts/Styles
 add_action( 'wp_enqueue_scripts', 'sa_desktop_enqueue_scripts_styles' );
 function sa_desktop_enqueue_scripts_styles () {
+
+
 	/* Bootstrap */
 	wp_enqueue_style( 'bootstrap-css', get_stylesheet_directory_uri().'/includes/lib/bootstrap/css/bootstrap.min.css', array(), PARENT_THEME_VERSION );
-	wp_enqueue_script( 'bootstrap-js', get_stylesheet_directory_uri() .'/includes/lib/bootstrap/js/bootstrap.min.js' );
+	wp_enqueue_script( 'bootstrap-js', get_stylesheet_directory_uri() .'/includes/lib/bootstrap/js/bootstrap.min.js', array('jquery') );
 
 	/* Swipe menu*/
 	wp_enqueue_script( 'hammer', get_stylesheet_directory_uri().'/includes/lib/swipe/hammer.min.js' );
-	
+
 	/* Custom */
 	wp_enqueue_style( 'standard-styles', get_stylesheet_directory_uri().'/includes/css/style-standard.css', array(), PARENT_THEME_VERSION );
 	wp_enqueue_style( 'style', get_stylesheet_directory_uri().'/style.css', array(), PARENT_THEME_VERSION );
@@ -28,7 +30,7 @@ function sa_desktop_enqueue_scripts_styles () {
 	wp_enqueue_style( 'google-font', get_stylesheet_directory_uri().'/includes/lib/fonts/fonts.css', array(), PARENT_THEME_VERSION );
 
 	/* FontAwesome */
-	wp_enqueue_style( 'prefix-font-awesome', get_stylesheet_directory_uri().'/includes/lib/font-awesome/css/font-awesome.min.css' );	
+	wp_enqueue_style( 'prefix-font-awesome', get_stylesheet_directory_uri().'/includes/lib/font-awesome/css/font-awesome.min.css' );
 
 	/* Lity */
 	if (!is_post_type_archive( 'testimonial' ) && !is_tax('testimonial') && !is_singular('testimonial')) {
@@ -39,6 +41,9 @@ function sa_desktop_enqueue_scripts_styles () {
 	/* Lazy Load */
 	wp_enqueue_style( 'lazy-video-css', get_stylesheet_directory_uri().'/includes/lib/lazy-load-youtube/styles.css' );
 	wp_enqueue_script( 'lazy-video-js', get_stylesheet_directory_uri().'/includes/lib/lazy-load-youtube/script.js' );
+
+	/* Custom styles */
+	wp_enqueue_style( 'custom-css', get_stylesheet_directory_uri().'/custom.css' );
 }
 
 
@@ -73,42 +78,42 @@ function sp_post_info_filter( $post_info ) {
 	}else{
 		$post_info = '';
 	}
-	
+
 	return $post_info;
 
 }
 
 // Schema Medical Procedures
-add_filter( 'genesis_attr_entry', 'sa_desktop_schema_article', 20 ); 
-add_filter( 'genesis_attr_entry-title', 'sa_desktop_schema_article_title', 20 ); 
-add_filter( 'genesis_attr_entry-content', 'sa_desktop_schema_article_content', 20 ); 
+add_filter( 'genesis_attr_entry', 'sa_desktop_schema_article', 20 );
+add_filter( 'genesis_attr_entry-title', 'sa_desktop_schema_article_title', 20 );
+add_filter( 'genesis_attr_entry-content', 'sa_desktop_schema_article_content', 20 );
 
-function sa_desktop_schema_article( $attributes ) { 
-if (is_tree( is_tree( PROCEDURE_ID ) )) { 
-		$attributes['itemtype'] = 'https://health-lifesci.schema.org/MedicalProcedure'; 
-		return $attributes; 
-	}else{ 
-		$attributes['itemtype'] = 'https://schema.org/CreativeWork'; 
-		return $attributes; 
-	} 
-} 
-function sa_desktop_schema_article_title( $attributes ) { 
-	if (is_tree( is_tree( PROCEDURE_ID ) )) { 
-		$attributes['itemprop'] = 'name'; 
+function sa_desktop_schema_article( $attributes ) {
+if (is_tree( is_tree( PROCEDURE_ID ) )) {
+		$attributes['itemtype'] = 'https://health-lifesci.schema.org/MedicalProcedure';
 		return $attributes;
-	}else{ 
-		$attributes['itemprop'] = 'headline'; 
-		return $attributes; 
-	} 
-} 
-function sa_desktop_schema_article_content( $attributes ) { 
-if (is_tree( is_tree( PROCEDURE_ID ) )) { 
-		$attributes['itemprop'] = 'description'; 
-		return $attributes; 
-	}else{ 
-		$attributes['itemprop'] = 'text'; 
-		return $attributes; 
-	} 
+	}else{
+		$attributes['itemtype'] = 'https://schema.org/CreativeWork';
+		return $attributes;
+	}
+}
+function sa_desktop_schema_article_title( $attributes ) {
+	if (is_tree( is_tree( PROCEDURE_ID ) )) {
+		$attributes['itemprop'] = 'name';
+		return $attributes;
+	}else{
+		$attributes['itemprop'] = 'headline';
+		return $attributes;
+	}
+}
+function sa_desktop_schema_article_content( $attributes ) {
+if (is_tree( is_tree( PROCEDURE_ID ) )) {
+		$attributes['itemprop'] = 'description';
+		return $attributes;
+	}else{
+		$attributes['itemprop'] = 'text';
+		return $attributes;
+	}
 }
 
 //* Order of the widgets for the sidebar
@@ -117,7 +122,7 @@ function sa_desktop_custom_sidebar(){
 	if ( is_active_sidebar( 'sidebar-form' ) ) {
 		if (!is_page( CONTACT_PAGE )) {
 			genesis_widget_area( 'sidebar-form' );
-		}		
+		}
 	}else{ ?>
 		<h4 class="widgettitle">Sidebar Contact Form</h4>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit consectetur tellus. Quisque vitae consequat lectus. Nullam a nibh gravida, cursus justo vitae, varius justo.</p>
@@ -160,7 +165,7 @@ function sa_desktop_custom_sidebar(){
 	<?php }
 }
 
-add_action( 'genesis_footer', 'sa_footer');
+// add_action( 'genesis_footer', 'sa_footer');
 
 function sa_footer(){
 	?>
@@ -190,7 +195,7 @@ function sa_footer(){
 						<h4 class="widgettitle">Footer 3</h4>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit consectetur tellus. Quisque vitae consequat lectus. Nullam a nibh gravida, cursus justo vitae, varius justo.</p>
 						<?php } ?>
-					</div>		
+					</div>
 					<div class="col-sm-6 col-md-3">
 						<?php if (is_active_sidebar( 'footer-4' )) {
 							genesis_widget_area( 'footer-4' );
@@ -198,13 +203,13 @@ function sa_footer(){
 						<h4 class="widgettitle">Footer 4</h4>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit consectetur tellus. Quisque vitae consequat lectus. Nullam a nibh gravida, cursus justo vitae, varius justo.</p>
 						<?php } ?>
-					</div>				
+					</div>
 				</div>
 				<?php if (is_active_sidebar( 'footer-description' )): ?>
 					<div class="site-footer-description">
 					 	<?php genesis_widget_area( 'footer-description' ); ?>
 					</div>
-				<?php endif ?>				
+				<?php endif ?>
 			</div>
 		</div>
 	<?php
@@ -245,7 +250,7 @@ genesis_register_sidebar( array(
 	'id'			=> 'sidebar-5',
 	'name'			=> 'Home Our Procedures',
 	'description'	=> 'This is the Home Our Procedures'
-	)); 
+	));
 
 //* Begin footer widgets
 genesis_register_sidebar( array(

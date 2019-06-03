@@ -1,0 +1,270 @@
+.no-padding {
+  margin-right: -15px;
+  margin-left: -15px;
+
+  [class^="col-"] {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.relative-row {
+  [class^="col-"] {
+    position: relative;
+  }
+}
+
+.header-image .site-title > a {
+  min-height: 134px;
+}
+
+.site-header {
+  background-color: #00aae8;
+  border-bottom: none;
+  min-height: 134px;
+
+  .wrap {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .title-area {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.header-widget-area {
+  .widget {
+    float: right;
+    padding: 28px 50px;
+  }
+}
+
+.header__widget {
+  font-family: "Raleway", serif;
+  color: #FFF;
+
+  &--address {
+    text-align: left;
+    font-size: 15px;
+  }
+
+  &--phone {
+    font-size: 45px;
+  }
+}
+
+#menu-button-section {
+  line-height: 134px;
+  color: #FFF;
+
+  #menu-button {
+    background-color: transparent;
+  }
+}
+
+.nav-primary {
+  display: none;
+  position: fixed;
+  top: 0;
+  z-index: 500;
+  height: 100vh;
+  width: 100vw;
+  background-color: #fff;
+
+  &.shown {
+    display: block;
+  }
+}
+
+.featured-slider {
+  text-align: center;
+  color: #FFF;
+  position: relative;
+
+  h3 {
+    font-size: 70px;
+    font-family: "Playfair Display", serif;
+    text-shadow: 5px 5px 5px rgba(0,0,0,.24);
+    font-weight: 900;
+    margin-top: 25px;
+  }
+  h4 {
+    font-size: 45px;
+    letter-spacing: 20px;
+    text-transform: uppercase;
+    font-family: "Raleway", serif;
+    font-weight: 300;
+    text-shadow: 5px 5px 5px rgba(0,0,0,.24);
+  }
+}
+
+.button--call-to-action {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  padding: 18px 35px;
+  transform: translateX(-50%);
+  background-color: transparent;
+  border: 1px solid #FFF;
+  font-weight: 300;
+  letter-spacing: 5px;
+}
+
+.featured-1 {
+  font-family: "Raleway", serif;
+
+  .widget__title {
+    font-size: 30px;
+    color: #00aae8;
+  }
+  .widget__content {
+    font-size: 16px;
+  }
+
+  &__description {
+    padding-bottom: 60px;
+  }
+}
+
+.featured-2-3 {
+  background-color: #f3f3f3;
+  padding: 60px 0;
+  font-family: "Raleway", serif;
+
+  &__doctors {
+    h4 {
+      text-align: center;
+      text-transform: uppercase;
+      color: #00a7e5;
+      font-family: "Raleway", serif;
+      font-size: 25px;
+      font-weight: 400;
+    }
+    h5 {
+      text-align: center;
+      font-weight: 500;
+      text-transform: capitalize;
+      font-family: "Raleway", serif;
+    }
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+
+    .doctor__content {
+      background-color: #00a7e5;
+      color: #FFF;
+      font-weight: 300;
+      font-size: 15px;
+      padding: 15px;
+      text-align: right;
+
+      p {
+        text-align: left;
+      }
+    }
+  }
+}
+
+.featured-4,
+.featured-5,
+.featured-6 {
+  font-family: "Raleway", serif;
+  padding: 30px 0 0 60px;
+
+  .widget__title {
+    font-size: 30px;
+    line-height: 1.2;
+
+    span.hero {
+      color: #00aae8;
+      font-size: 60px;
+    }
+  }
+  .widget__content {
+    font-size: 16px;
+  }
+
+  &__description {
+    padding-bottom: 60px;
+  }
+}
+
+.sub-menus {
+  h5 {
+    position: absolute;
+    top: 50%;
+    color: #FFF;
+    font-size: 40px;
+    font-weight: 300;
+    font-family: "Raleway";
+    width: 100%;
+    text-align: center;
+  }
+}
+
+h3#explore-gallery {
+  position: absolute;
+  top: 150px;
+  color: #FFF;
+  width: 100%;
+  text-align: center;
+  font-size: 150px;
+  text-shadow: 5px 5px 5px rgba(0,0,0,.24);
+  font-family: 'Playfair Display',serif;
+}
+
+.gallery-bg-container {
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 550px;
+}
+
+img#explore-gallery__model {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+button#explore-gallery__button {
+  background-color: transparent;
+  border: 2px solid white;
+  font-family: "Raleway", serife;
+  text-transform: uppercase;
+  padding: 15px 120px;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.testimonials-bg-container {
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 450px;
+  background-position: top right;
+}
+
+#testimonial__content {
+  text-align: center;
+  padding-top: 50px;
+  font-family: "Raleway", serif;
+
+  h4 {
+    font-weight: 300;
+    margin-bottom: 60px;
+  }
+  blockquote {
+    width: 40%;
+    margin-left: 20%;
+    font-size: 15px;
+
+    &::before {
+      font-size: 50px;
+      top: -40px;
+    }
+  }
+}
