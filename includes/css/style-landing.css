@@ -1,0 +1,138 @@
+.page-landing a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.page-landing .site-inner {
+    padding: 0;
+    max-width: 100%;
+    width: 100%;
+}
+
+.page-landing .content {
+    float: none;
+}
+
+.page-landing .landing-header {
+    background: #091b30;
+    color: #ffffff;
+    margin: 0 -15px;
+    border-bottom: solid 5px #96c3c7;
+}
+
+.page-landing .landing-header .phone {
+    float: right;
+    text-align: center;
+    font-size: 32px;
+}
+
+.page-landing .landing-header .phone a {
+    display: block;
+    color: #87ccd9 !important;
+    font-size: 26px;
+}
+
+.page-landing .entry {
+    margin-bottom: 0;
+}
+
+.page-landing .slider-wide {
+    background: #dddddd;
+    margin: 0 -15px;
+}
+
+.page-landing .landing-featured-1 {
+    background: #ffffff;
+    margin: 0 -15px;
+}
+
+.page-landing .post-54 .slider-wide {
+    background-image: url(http://www.drphilipmiller.com/wp-content/uploads/2017/10/banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.page-landing .slider-wide h1 {
+    color: #000000;
+}
+
+.page-landing .landing-featured-2 {
+    background: #87ccd9;
+    margin: 0 -15px;
+}
+
+.page-landing .landing-featured-3 {
+    background: #ffffff;
+    margin: 0 -15px;
+}
+
+.page-landing .landing-featured-4 {
+    background: #87ccd9;
+    margin: 0 -15px;
+}
+
+.page-landing .landing-footer{
+    background: #333333;
+    margin: 0 -15px;
+    color: #ffffff;
+    font-size: 12px;
+    border-bottom: 5px solid #cccccc;
+}
+
+.page-landing .reviews .fa {
+    color: yellow;
+}
+
+.page-landing .landing-featured-2 h2 {
+    text-align: center;
+    margin: 0 0 24px 0;
+}
+
+.disclaimer {
+    text-align: center;
+}
+
+@media screen and (max-width: 1200px){
+	.page-landing .content-row .wrap {
+ 	   padding: 0 15px;
+	}
+
+	.page-landing .logo {
+ 	   text-align: center;
+	   margin-top: 20px;  
+	}
+	.page-landing .landing-header .phone {
+		margin-top:20px;
+	}
+	.page-landing h1,
+        .page-landing h2 {
+            text-align: center;
+            margin: 15px 0 !important;
+        }
+	.page-landing .content-row .wrap {
+            padding: 15px;
+        }
+	.logo img {
+		margin: 0;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.page-landing .landing-header .phone {
+		float: none;
+	}
+	
+	.page-landing .reviews {
+    		text-align: center;
+	}
+	.page-landing .landing-footer .logo {
+	    margin: 24px 0;
+	}
+
+        .page-landing .landing-header {
+            padding: 15px 0
+        }
+	.logo img {
+	    margin: 0 auto;
+	}
+}
